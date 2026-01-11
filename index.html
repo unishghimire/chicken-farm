@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenValley Broiler Farm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Firebase Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-green-900 text-white shadow-lg sticky top-0 z-50 border-b-4 border-yellow-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-20">
+                <!-- LOGO SECTION -->
+                <div class="flex items-center cursor-pointer gap-3" onclick="router('home')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2829/2829824.png" class="h-12 w-12 bg-white rounded-full p-1 shadow-lg" alt="Chicken Logo">
+                    <div>
+                        <span class="font-bold text-2xl block leading-none tracking-wide">GreenValley</span>
+                        <span class="text-xs text-yellow-400 uppercase font-bold tracking-widest">Premium Broiler Farm</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium">
+                    <button onclick="router('home')" class="hover:text-yellow-400 transition">Home</button>
+                    <button onclick="router('products')" class="hover:text-yellow-400 transition">Order Live Bird</button>
+                    <button onclick="router('gallery')" class="hover:text-yellow-400 transition">Gallery</button>
+                    <button onclick="router('about')" class="hover:text-yellow-400 transition">About</button>
+                    <button onclick="router('contact')" class="hover:text-yellow-400 transition">Contact</button>
+                    <button onclick="router('admin-login')" id="nav-admin-btn" class="bg-yellow-500 text-green-900 px-5 py-2 rounded-full font-bold hover:bg-yellow-400 ml-4 shadow">Admin</button>
+                </div>
+
+                <!-- Mobile Menu Icon -->
+                <div class="flex items-center md:hidden">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><i class="fa-solid fa-bars text-3xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-green-800 pb-4">
+            <button onclick="router('home')" class="block w-full text-left px-6 py-3 border-b border-green-700">Home</button>
+            <button onclick="router('products')" class="block w-full text-left px-6 py-3 border-b border-green-700">Order</button>
+            <button onclick="router('gallery')" class="block w-full text-left px-6 py-3 border-b border-green-700">Gallery</button>
+            <button onclick="router('admin-login')" class="block w-full text-left px-6 py-3 text-yellow-300 font-bold">Admin</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="app" class="min-h-screen pb-12">
+        <!-- Content injects here -->
+    </main>
+
+    <!-- Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
