@@ -96,25 +96,24 @@ function startListeners() {
 
 // 6. RENDER FUNCTIONS
 
-// --- HOME (FIXED IMAGE SECTION) ---
+// --- HOME ---
 function renderHome() {
     document.getElementById('app').innerHTML = `
         <div class="fade-in">
-            <!-- Hero -->
-            <div class="hero-bg h-[500px] flex items-center justify-center text-center text-white px-4">
-                <div class="bg-black/60 p-10 rounded-3xl backdrop-blur-md border border-green-500/30 shadow-2xl max-w-2xl">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2829/2829824.png" class="h-24 w-24 mx-auto mb-6 bg-white rounded-full p-2 shadow-lg" alt="Logo">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">GreenValley Farm</h1>
-                    <div class="h-1 w-20 bg-yellow-400 mx-auto mb-6"></div>
-                    <p class="text-xl md:text-2xl mb-8 text-gray-200 font-light">Raising Nepal's Finest Organic Broiler Chicken</p>
-                    <button onclick="router('products')" class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:scale-105 uppercase tracking-wide">
-                        Order Live Birds
-                    </button>
+            <!-- Hero Section -->
+            <div class="relative h-[600px] flex items-center justify-center text-center text-white px-4 bg-cover bg-center bg-no-repeat bg-fixed"
+                 style="background-image: url('https://www.farmforward.com/wp-content/uploads/2023/03/broiler-chicken.jpg');">
+                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-xl text-white">GreenValley Farm</h1>
+                    <div class="h-1.5 w-24 bg-yellow-400 mx-auto mb-8 rounded-full shadow-lg"></div>
+                    <p class="text-xl md:text-3xl mb-10 font-light text-gray-100 drop-shadow-md leading-relaxed">Raising Nepal's Finest Organic Broiler Chicken</p>
+                    <button onclick="router('products')" class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-12 rounded-full text-lg shadow-2xl transition transform hover:-translate-y-1 hover:scale-105 border-2 border-green-400 uppercase tracking-wider">ORDER LIVE BIRDS</button>
                 </div>
             </div>
             
-            <!-- Stats Section -->
-            <div class="max-w-6xl mx-auto -mt-20 relative z-10 px-4 mb-20">
+            <!-- Stats -->
+            <div class="max-w-6xl mx-auto -mt-24 relative z-10 px-4 mb-20">
                 <div class="bg-white rounded-2xl shadow-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-center border-t-8 border-green-600 mb-8">
                     <div class="border-b md:border-b-0 md:border-r border-gray-100 pb-6 md:pb-0">
                         <div class="inline-block p-3 bg-green-100 rounded-full text-green-600 mb-3"><i class="fa-solid fa-money-bill-wave text-2xl"></i></div>
@@ -130,7 +129,7 @@ function renderHome() {
                     </div>
                 </div>
 
-                <!-- Daily Log -->
+                <!-- Log -->
                 <div class="bg-gray-900 rounded-2xl shadow-xl p-6 text-white border border-gray-700">
                     <div class="flex justify-between items-center border-b border-gray-700 pb-4 mb-6">
                         <h3 class="font-bold text-yellow-400 uppercase tracking-widest"><i class="fa-solid fa-clipboard-list mr-2"></i> Daily Farm Log</h3>
@@ -161,27 +160,19 @@ function renderHome() {
                 </div>
             </div>
 
-            <!-- Transparent Farming Section (FIXED IMAGE) -->
+            <!-- Transparency Section (UPDATED IMAGE) -->
             <section class="py-16 px-4 bg-gray-50">
                 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <img src="https://images.unsplash.com/photo-1541604193435-22287d32c214?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                             class="relative rounded-2xl shadow-xl border-4 border-white w-full h-80 object-cover" 
-                             alt="Farm View">
+                         <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                         <img src="https://www.farmforward.com/wp-content/uploads/2023/03/broiler-chicken.jpg" 
+                              class="relative rounded-2xl shadow-xl border-4 border-white w-full h-80 object-cover">
                     </div>
                     <div>
                         <h2 class="text-4xl font-bold text-gray-800 mb-6">Transparent Farming</h2>
                         <p class="text-gray-600 mb-6 text-lg leading-relaxed">
                             We believe in full transparency. Our daily logs show exactly what our birds eat and their health status, so you know your meat is safe.
-                            We maintain strict Bio-security standards to ensure every bird is healthy and antibiotic-free.
                         </p>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                             <div class="flex items-center text-gray-700"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Daily Sanitization</div>
-                             <div class="flex items-center text-gray-700"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Clean Water</div>
-                             <div class="flex items-center text-gray-700"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Veg Feed Only</div>
-                             <div class="flex items-center text-gray-700"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Open Ventilation</div>
-                        </div>
                         <button onclick="router('about')" class="bg-green-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-800 transition shadow">
                             Read Our Story &rarr;
                         </button>
